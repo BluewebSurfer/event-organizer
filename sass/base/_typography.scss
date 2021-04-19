@@ -1,0 +1,65 @@
+.heading--1{
+    font-weight: 500;
+    color: $color-white!important;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.heading--1,
+.heading--2{
+    font-weight: 300;
+    font-size: 3rem;
+    color: $color-text-pink;
+    text-align: center;
+
+
+    @include respond(phone){
+        font-size: 3.6rem;
+    }
+    @include respond(tab-land){
+        font-size: 4rem;
+    }
+}
+
+
+.heading--3{
+    font-size: 2.5rem;
+    color: $color-text-pink;
+
+}
+
+.home-hero__title{
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+
+
+    @include respond(phone){
+        flex-direction: row;
+    }
+
+    img{
+        width: clamp(6rem, 4vw, 8rem);
+    }
+}
+
+
+.common-para-1{
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    color: $color-black;
+}
+
+.common-para-2{
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    color: $color-black;
+}

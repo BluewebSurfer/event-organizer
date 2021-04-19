@@ -1,0 +1,350 @@
+/*
+Project: School website
+Author: Abhijit Barman(Front-end developer at bluewebsurfuer.com)
+Written in: HTML, CSS, JS
+Project started on: 12th aprill 2021
+*/
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone - 600px
+- tab-port - 900px
+- tab-land - 1200px
+
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "Gabriola";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Gabriola"), url("gabriola.woff") format("woff");
+}
+body {
+  box-sizing: border-box;
+  font-family: Gabriola;
+}
+
+.common-container-1 {
+  max-width: 111rem;
+  margin: 0 auto;
+}
+
+.heading--1 {
+  font-weight: 500;
+  color: #fff !important;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.heading--1,
+.heading--2 {
+  font-weight: 300;
+  font-size: 3rem;
+  color: #91002C;
+  text-align: center;
+}
+@media only screen and (min-width: 37.5em) {
+  .heading--1,
+.heading--2 {
+    font-size: 3.6rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .heading--1,
+.heading--2 {
+    font-size: 4rem;
+  }
+}
+
+.heading--3 {
+  font-size: 2.5rem;
+  color: #91002C;
+}
+
+.home-hero__title {
+  background-color: rgba(0, 0, 0, 0.664);
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .home-hero__title {
+    flex-direction: row;
+  }
+}
+.home-hero__title img {
+  width: clamp(6rem, 4vw, 8rem);
+}
+
+.common-para-1 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  color: #000;
+}
+
+.common-para-2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  color: #000;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.flex-content-center {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.header__banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 15vh;
+}
+.header__banner-img img {
+  width: 100%;
+}
+@media only screen and (min-width: 75em) {
+  .header__banner-img img {
+    height: 10rem;
+  }
+}
+
+.nav {
+  background-color: #FE6291;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__list {
+  list-style: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+@media only screen and (min-width: 37.5em) {
+  .nav__list {
+    display: flex;
+  }
+}
+.nav__item {
+  position: relative;
+}
+.nav__item:not(:last-child) {
+  margin-right: 2.5rem;
+}
+.nav__link:not(.nav__link--active) {
+  color: #fff;
+}
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 400;
+  transition: all 0.2s;
+}
+.nav__link--active, .nav__link:hover {
+  color: #7E0026;
+}
+.nav__item:hover > ul {
+  visibility: visible;
+}
+
+.grid-col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+.grid-col-2--res {
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 37.5em) {
+  .grid-col-2--res {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-col-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.grid-col-3--res {
+  grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 37.5em) {
+  .grid-col-3--res {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-hero {
+  position: relative;
+}
+.home-hero__text-box {
+  grid-row-start: 1;
+  grid-row-end: -1;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-15%);
+}
+.home-hero__img-box {
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+}
+@media only screen and (min-width: 75em) {
+  .home-hero__img-box {
+    height: calc(100vh - 10rem);
+  }
+}
+.home-hero__img-box-1 {
+  grid-row-start: 1;
+  grid-row-end: -1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-image: url("../img/hero-1.jpg");
+}
+.home-hero__img-box-2 {
+  grid-row-start: 1;
+  grid-row-end: -1;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-image: url("../img/hero-2.jpg");
+}
+
+.features {
+  padding: 5rem 2.5rem;
+}
+.features__intro-picture {
+  border-radius: 10rem;
+}
+.features__intro-picture img {
+  width: 100%;
+  border-radius: 10rem;
+}
+.features__cards {
+  margin-top: 4rem;
+}
+.features__card {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+.features__card-content {
+  padding: 2rem 2rem;
+  background-color: rgba(254, 212, 224, 0.8);
+  text-align: center;
+}
+.features__card-content img {
+  width: 6rem;
+  height: 6rem;
+}
+.features__card-text {
+  gap: 1rem;
+}
+
+.story {
+  padding: 5rem 2.5rem;
+  background-color: rgba(254, 212, 224, 0.6);
+  position: relative;
+}
+.story__content {
+  gap: 2.5rem;
+}
+.story__picture {
+  position: relative;
+  border-radius: 50%;
+}
+.story__picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 4px solid rgba(254, 212, 224, 0.8);
+  z-index: 10;
+}
+.story__picture img {
+  width: 100%;
+  border-radius: 50%;
+  transform: translate(5%, 5%);
+  position: relative;
+  z-index: 5;
+}
+.story .flower {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.video {
+  cursor: pointer;
+}
+.video-player {
+  width: 100%;
+}
+.video__wrapper {
+  position: relative;
+}
+@media only screen and (min-width: 56.25em) {
+  .video {
+    height: 100vh;
+  }
+}
+
+.play-pause {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.322);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.play-pause svg {
+  width: max(5rem, 4vw);
+  fill: #fff;
+}
