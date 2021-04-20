@@ -28,3 +28,66 @@
         }
     }
 }
+
+
+
+.gall-1{
+    margin-top: clamp(2rem, 3vw, 4rem);
+    display: grid;
+    grid-template-columns: 2fr 1.8fr 2fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "gal11 gal12 gal14"
+                         "gal11 gal13 gal14";
+
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: clamp(.5rem, 2vw, 2rem);
+
+    &__item--1{
+        grid-area: gal11;
+    }
+    &__item--2{
+        grid-area: gal12;
+
+    }
+    &__item--3{
+        grid-area: gal13;
+
+    }
+    &__item--4{
+        grid-area: gal14;
+    }
+}
+
+.gall-2{
+    margin-top: clamp(2rem, 3vw, 4rem);
+    display: grid;
+    grid-auto-columns: 1.8fr 2fr 1.8fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "gal21 gal23 gal24"
+                         "gal22 gal23 gal25";
+
+    justify-items: center;
+    align-items: center;
+    grid-gap: clamp(.5rem, 2vw, 2rem);
+    
+
+    &__item--1{
+        grid-area: gal21;
+    }
+    &__item--2{
+        grid-area: gal22;
+
+    }
+    &__item--3{
+        grid-area: gal23;
+    }
+    &__item--4{
+        grid-area: gal24;
+
+    }
+    &__item--5{
+        grid-area: gal25;
+
+    }
+}

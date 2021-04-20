@@ -10,11 +10,16 @@
 
 
 // LAYOUT
+@import "layout/grid";
 @import "layout/header";
 @import "layout/navigation";
-@import "layout/grid";
+@import "layout/hero";
+@import "layout/story";
+@import "layout/footer";
 
 
 
 // PAGES
 @import "pages/home";
+@import "pages/about";
+@import "pages/gallery";

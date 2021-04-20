@@ -1,0 +1,41 @@
+.about-hero{
+    background-image: linear-gradient(rgba($color-hero-bg,.13), rgba($color-hero-bg,.13)), url("../img/bride-and-groom@2x.jpg");
+}
+
+
+.decoration{
+    background-color: $color-white;
+    background-image: url("../img/flower-1.svg"), url("../img/flower.svg");
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    padding: 5rem 2.5rem;
+
+    &__items{
+        grid-gap: 4rem;
+    }
+
+
+    &__item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include respond(phone){
+            &:nth-child(even){
+                flex-direction: column-reverse;
+            }
+        }
+
+    }
+
+    &__img{
+        width: 100%;
+    }
+
+    &__text-box{
+
+    }
+
+}
