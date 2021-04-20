@@ -599,3 +599,8 @@ body {
   font-family: "Great Vibes", cursive;
   font-weight: 500;
 }
+
+.services-hero {
+  background-image: linear-gradient(rgba(55, 0, 17, 0.13), rgba(55, 0, 17, 0.13)), url("../img/service-hero.jpg");
+  background-position: center, top;
+}
