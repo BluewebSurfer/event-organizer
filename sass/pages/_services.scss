@@ -1,7 +1,25 @@
-.services{
-    &-hero{
-        background-image: linear-gradient(rgba($color-hero-bg,.13), rgba($color-hero-bg,.13)), url("../img/service-hero.jpg");
+.services {
+    &-hero {
+        position: relative;
+        background-image: linear-gradient(rgba($color-hero-bg, .13), rgba($color-hero-bg, .13)), url("../img/service-hero.jpg");
         background-position: center, top;
+    }
+}
 
+.section-services {
+    padding: 5rem 2.5rem;
+}
+
+.services-item {
+
+
+
+    &__img {
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
     }
 }
