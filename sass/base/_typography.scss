@@ -49,7 +49,7 @@
 
 
 .common-para-1 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 2.5vw, 2.8rem);
     font-weight: 300;
     line-height: 1.2;
     text-align: center;
@@ -62,4 +62,47 @@
     line-height: 1.2;
     text-align: center;
     color: $color-black;
+}
+
+
+/////////////////////////
+// SERVICE PAGE
+.services__title-desc{
+    font-family: $roboto;
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.services-item{
+    &__title{
+        font-family: $great-vibes;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__details{
+        font-size: 1.4rem;
+        line-height: 1.6;
+        font-family: $roboto;
+    }
+
+}
+
+.plans__item{
+
+    &-title{
+        font-size: 3rem;
+        color: $color-text-pink;
+        font-family: $great-vibes;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &-details{
+        font-size: 1.4rem;
+        line-height: 1.6;
+        font-family: $roboto;
+    }
+
 }

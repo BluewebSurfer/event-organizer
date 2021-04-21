@@ -101,7 +101,18 @@
 
 /////////////////
 // services page 
-.grid-col-4 {
+.grid-col-sm-4 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+
+    @include respond(phone){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @include respond(tab-port){
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
 }

@@ -7,19 +7,48 @@
 }
 
 .section-services {
+    background-color: rgba($color-light-pink,.4);
     padding: 5rem 2.5rem;
+    background-image: url("../img/flower-1.svg"), url("../img/flower.svg");
+    background-size: 20%;
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
 }
 
 .services-item {
-
-
-
+    text-align: center;
     &__img {
         border-radius: 50%;
 
         img {
-            width: 100%;
+            width: 60%;
             border-radius: 50%;
+
+            @include respond(tab-port){
+                width: 100%;   
+            }
         }
+    }
+
+
+    &:nth-child(odd){
+        @include respond(tab-port){
+            transform: translateY(-15%);        
+        }
+    }
+}
+
+
+//////////////////////////
+// PLANS SECTION
+.plans{
+    padding: 5rem 2.5rem;
+    background-image: url("../img/wedding-stage.jpg");
+    &__item{
+        background-color: rgba($color-white,.86);
+        padding-inline: 3rem ;
+        padding-block: 3.5rem;
+        text-align: center;
+        border-radius: 2rem;
     }
 }

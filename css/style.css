@@ -110,7 +110,7 @@ body {
 }
 
 .common-para-1 {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
   font-weight: 300;
   line-height: 1.2;
   text-align: center;
@@ -125,6 +125,37 @@ body {
   color: black;
 }
 
+.services__title-desc {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.services-item__title {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  text-align: center;
+}
+.services-item__details {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
+
+.plans__item-title {
+  font-size: 3rem;
+  color: #91002c;
+  font-family: "Great Vibes", cursive;
+  font-weight: 500;
+  text-align: center;
+}
+.plans__item-details {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
+
 .u-center-text {
   text-align: center !important;
 }
@@ -134,6 +165,64 @@ body {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+}
+
+.u-mt-1 {
+  margin-top: 1rem;
+}
+
+.u-mt-3 {
+  margin-top: 3rem;
+}
+
+.u-mt-4 {
+  margin-top: 4rem;
+}
+
+.u-mt-sm-8 {
+  margin-top: 4rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .u-mt-sm-8 {
+    margin-top: 8rem;
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 400;
+  border-radius: 5rem;
+}
+
+.btn--read-more {
+  color: #91002c;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+}
+.btn--read-more:hover {
+  background-color: #fe6291;
+  color: white;
+}
+
+.btn--plan {
+  color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem 3rem;
+  background-color: #FCEBF0;
+  transition: all 0.2s;
+}
+.btn--plan:hover {
+  background-color: #fe6291;
+  color: white;
 }
 
 .grid-col-2 {
@@ -216,9 +305,22 @@ body {
   grid-area: gal25;
 }
 
-.grid-col-4 {
+.grid-col-sm-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+}
+@media only screen and (min-width: 37.5em) {
+  .grid-col-sm-4 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .grid-col-sm-4 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
 }
 
 .header__banner {
@@ -626,13 +728,43 @@ body {
 }
 
 .section-services {
+  background-color: rgba(254, 212, 224, 0.4);
   padding: 5rem 2.5rem;
+  background-image: url("../img/flower-1.svg"), url("../img/flower.svg");
+  background-size: 20%;
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
 }
 
+.services-item {
+  text-align: center;
+}
 .services-item__img {
   border-radius: 50%;
 }
 .services-item__img img {
-  width: 100%;
+  width: 60%;
   border-radius: 50%;
+}
+@media only screen and (min-width: 56.25em) {
+  .services-item__img img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .services-item:nth-child(odd) {
+    transform: translateY(-15%);
+  }
+}
+
+.plans {
+  padding: 5rem 2.5rem;
+  background-image: url("../img/wedding-stage.jpg");
+}
+.plans__item {
+  background-color: rgba(255, 255, 255, 0.86);
+  padding-inline: 3rem;
+  padding-block: 3.5rem;
+  text-align: center;
+  border-radius: 2rem;
 }
